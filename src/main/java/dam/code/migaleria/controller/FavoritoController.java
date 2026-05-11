@@ -75,6 +75,15 @@ public class FavoritoController {
     }
 
     /**
+     * GET /api/favoritos - Listar todos los favoritos
+     */
+    @GetMapping
+    public ResponseEntity<List<Favorito>> listarFavoritos() {
+        List<Favorito> favoritos = favoritoRepository.findAll();
+        return ResponseEntity.ok(favoritos);
+    }
+
+    /**
      * Clase para recibir datos de favorito
      */
     public static class FavoritoRequest {
