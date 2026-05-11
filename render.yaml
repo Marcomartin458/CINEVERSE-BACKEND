@@ -11,14 +11,4 @@ services:
           name: miGaleria-api
           property: port
       - key: DATABASE_URL
-        fromService:
-          type: pserv
-          name: miGaleria-db
-          property: connectionString
-
-  - type: pserv
-    name: miGaleria-db
-    runtime: postgres
-    version: 15
-    databaseName: migaleria
-    user: migaleria_user
+        sync: false  # El usuario debe configurarlo manualmente

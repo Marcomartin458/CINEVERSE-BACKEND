@@ -1,0 +1,6 @@
+Descripcion:
+Quiero hacer una galeria de peliculas. Quiero que el usuario pueda ver las peliculas disponibles, que pueda modificarlas, eliminarlas y añadirlas.
+Las peliculas deben tener un titulo, un director, un genero y una descripcion, además de una imagen.
+Las peliculas se van a visualizar por tarjetas.
+Las acciones se van a realizar por botones. Excepto el de crear pelicula, que se va a realizar por un formulario, alojado arriba de la pagina.
+Tambien quiero que se filtren las peliculas por genero. Tambien quiero que se puedan buscar por titulo.
