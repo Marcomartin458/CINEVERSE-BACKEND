@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: miGaleria-api
+    runtime: docker
+    buildCommand: docker build -t miGaleria .
+    startCommand: docker run -p $PORT:8080 miGaleria
+    envVars:
+      - key: PORT
+        fromService:
+          type: web
+          name: miGaleria-api
+          property: port
+      - key: DATABASE_URL
+        fromService:
+          type: pserv
+          name: miGaleria-db
+          property: connectionString
+
+  - type: pserv
+    name: miGaleria-db
+    runtime: postgres
+    version: 15
+    databaseName: migaleria
+    user: migaleria_user

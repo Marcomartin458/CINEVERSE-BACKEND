@@ -66,3 +66,8 @@ nbdist/
 *.tmp
 *.swp
 *~
+
+############################
+# Application properties with sensitive data
+############################
+src/main/resources/application-local.properties
