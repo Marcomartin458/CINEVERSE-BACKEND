@@ -25,6 +25,11 @@ public class Pelicula {
 
     private String imagen;
 
+    @Column(length = 500)
+    private String link;   // enlace público para ver la película
+
+
+
     public enum Genero {
         ACCION, COMEDIA, DRAMA, FANTASIA, TERROR, CIENCIA_FICCION, AVENTURA
     }
@@ -33,12 +38,13 @@ public class Pelicula {
 
     // Constructor SIN id — para el DataLoader (JPA genera el id solo)
     public Pelicula(String titulo, String director, Genero genero,
-                    String descripcion, String imagen) {
+                    String descripcion, String imagen, String link) {
         this.titulo      = titulo;
         this.director    = director;
         this.genero      = genero;
         this.descripcion = descripcion;
         this.imagen      = imagen;
+        this.link          = link;
     }
 
     public int    getId()                  { return id; }
@@ -53,4 +59,6 @@ public class Pelicula {
     public void   setDescripcion(String d) { this.descripcion = d; }
     public String getImagen()              { return imagen; }
     public void   setImagen(String i)      { this.imagen = i; }
+    public String getLink() { return link; }
+    public void setLink(String link) { this.link = link; }
 }
